@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunil's Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #2c3e50;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .post {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .date {
+            color: #777;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Sunil's Blog</h1>
+        <p>My journey into coding and web development</p>
+    </header>
+
+    <div class="container">
+        <!-- First Blog Post -->
+        <div class="post">
+            <h2>My First Blog Post</h2>
+            <p class="date">April 8, 2026</p>
+            <p>Hello world! This is my very first blog post. I am currently learning how to build websites using HTML and CSS, and I am hosting this site for free on GitHub Pages.</p>
+        </div>
+
+        <!-- Second Blog Post -->
+        <div class="post">
+            <h2>What I plan to learn next</h2>
+            <p class="date">April 9, 2026</p>
+            <p>Next up, I want to learn more about styling with CSS to make this blog look even better, and maybe learn some JavaScript to add interactivity!</p>
+        </div>
+    </div>
+
+</body>
+</html>
