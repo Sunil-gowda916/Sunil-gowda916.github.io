@@ -3,66 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunil's Blog</title>
+    <title>Sunil's Dynamic Blog</title>
     <style>
+        /* CSS Variables for easy theming */
+        :root {
+            --bg-color: #f4f4f9;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --header-bg: #2c3e50;
+            --header-text: #ffffff;
+            --accent-color: #3498db;
+        }
+
+        /* Dark mode variables */
+        body.dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #f4f4f9;
+            --card-bg: #2d2d2d;
+            --header-bg: #111111;
+            --header-text: #ffffff;
+            --accent-color: #2980b9;
+        }
+
+        /* Basic Setup */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+
+        /* Header Styling */
         header {
-            background: #2c3e50;
-            color: #ffffff;
-            padding: 20px 0;
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 30px 20px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Dark Mode Button */
+        #theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        #theme-toggle:hover {
+            transform: scale(1.05);
+            background-color: #2980b9;
+        }
+
+        /* Main Content Container */
         .container {
-            width: 80%;
-            margin: 20px auto;
+            width: 90%;
+            margin: 40px auto;
             max-width: 800px;
         }
+
+        /* Blog Post Cards (Dynamic UI) */
         .post {
-            background: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
+        /* Hover Effect! */
+        .post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
         h2 {
             margin-top: 0;
-            color: #2c3e50;
+            color: var(--accent-color);
         }
+
         .date {
-            color: #777;
+            color: #888;
             font-size: 0.9em;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Welcome to Sunil's Blog</h1>
+        <button id="theme-toggle">🌙 Dark Mode</button>
+        <h1>Sunil's Blog</h1>
         <p>My journey into coding and web development</p>
     </header>
 
     <div class="container">
         <!-- First Blog Post -->
         <div class="post">
-            <h2>My First Blog Post</h2>
-            <p class="date">April 8, 2026</p>
-            <p>Hello world! This is my very first blog post. I am currently learning how to build websites using HTML and CSS, and I am hosting this site for free on GitHub Pages.</p>
+            <h2>My First Dynamic UI Post</h2>
+            <div class="date">April 8, 2026</div>
+            <p>Welcome to the upgraded version of my blog! Notice how the background color of this card changes when you switch to dark mode, and how the card lifts up when you hover your mouse over it.</p>
         </div>
 
         <!-- Second Blog Post -->
         <div class="post">
-            <h2>What I plan to learn next</h2>
-            <p class="date">April 9, 2026</p>
-            <p>Next up, I want to learn more about styling with CSS to make this blog look even better, and maybe learn some JavaScript to add interactivity!</p>
+            <h2>Adding Interactivity with JavaScript</h2>
+            <div class="date">April 9, 2026</div>
+            <p>I added a small script at the bottom of my HTML file. When you click the Dark Mode button, JavaScript tells the browser to swap out the colors seamlessly. This is the first step to making a truly dynamic web app!</p>
         </div>
     </div>
+
+    <footer>
+        &copy; 2026 Sunil-gowda916. Built with HTML, CSS, and JS.
+    </footer>
+
+    <!-- JavaScript for the Dark Mode Toggle -->
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggleBtn.addEventListener('click', () => {
+            // Toggle the 'dark-mode' class on the body tag
+            body.classList.toggle('dark-mode');
+
+            // Change the button text based on the mode
+            if (body.classList.contains('dark-mode')) {
+                themeToggleBtn.textContent = '☀️ Light Mode';
+            } else {
+                themeToggleBtn.textContent = '🌙 Dark Mode';
+            }
+        });
+    </script>
 
 </body>
 </html>
