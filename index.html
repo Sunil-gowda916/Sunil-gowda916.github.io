@@ -1,167 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunil's Dynamic Blog</title>
-    <style>
-        /* CSS Variables for easy theming */
-        :root {
-            --bg-color: #f4f4f9;
-            --text-color: #333333;
-            --card-bg: #ffffff;
-            --header-bg: #2c3e50;
-            --header-text: #ffffff;
-            --accent-color: #3498db;
-        }
-
-        /* Dark mode variables */
-        body.dark-mode {
-            --bg-color: #1a1a1a;
-            --text-color: #f4f4f9;
-            --card-bg: #2d2d2d;
-            --header-bg: #111111;
-            --header-text: #ffffff;
-            --accent-color: #2980b9;
-        }
-
-        /* Basic Setup */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        /* Header Styling */
-        header {
-            background: var(--header-bg);
-            color: var(--header-text);
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            position: relative;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        /* Dark Mode Button */
-        #theme-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 10px 15px;
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: transform 0.2s ease, background-color 0.2s ease;
-        }
-
-        #theme-toggle:hover {
-            transform: scale(1.05);
-            background-color: #2980b9;
-        }
-
-        /* Main Content Container */
-        .container {
-            width: 90%;
-            margin: 40px auto;
-            max-width: 800px;
-        }
-
-        /* Blog Post Cards (Dynamic UI) */
-        .post {
-            background: var(--card-bg);
-            padding: 25px;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        /* Hover Effect! */
-        .post:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
-
-        h2 {
-            margin-top: 0;
-            color: var(--accent-color);
-        }
-
-        .date {
-            color: #888;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #777;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sunil Gowda – Developer, creator, and lifelong learner." />
+  <title>Sunil Gowda | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-    <header>
-        <button id="theme-toggle">🌙 Dark Mode</button>
-        <h1>Sunil's Blog</h1>
-        <p>My journey into coding and web development</p>
-    </header>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">SG</a>
 
-    <div class="container">
-        <!-- First Blog Post -->
-        <div class="post">
-            <h2>My First Dynamic UI Post</h2>
-            <div class="date">April 8, 2026</div>
-            <p>Welcome to the upgraded version of my blog! Notice how the background color of this card changes when you switch to dark mode, and how the card lifts up when you hover your mouse over it.</p>
-        </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
 
-        <!-- Second Blog Post -->
-        <div class="post">
-            <h2>Adding Interactivity with JavaScript</h2>
-            <div class="date">April 9, 2026</div>
-            <p>I added a small script at the bottom of my HTML file. When you click the Dark Mode button, JavaScript tells the browser to swap out the colors seamlessly. This is the first step to making a truly dynamic web app!</p>
-        </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
+  </nav>
 
-    <footer>
-        &copy; 2026 Sunil-gowda916. Built with HTML, CSS, and JS.
-    </footer>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-greeting">👋 Hi, I'm</p>
+      <h1 class="hero-name">Sunil Gowda</h1>
+      <p class="hero-tagline">Developer &amp; Creator</p>
+      <p class="hero-description">
+        I build modern, responsive web experiences and enjoy turning ideas into
+        clean, functional code.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="avatar-circle">
+        <span class="avatar-initials">SG</span>
+      </div>
+    </div>
+  </section>
 
-    <!-- JavaScript for the Dark Mode Toggle -->
-    <script>
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const body = document.body;
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a passionate developer with a love for clean code and great user
+            experiences. I'm always learning new technologies and looking for
+            ways to apply them to real-world problems.
+          </p>
+          <p>
+            When I'm not coding, I enjoy exploring open-source projects,
+            contributing to the community, and writing about what I learn on
+            this blog.
+          </p>
+          <ul class="about-facts">
+            <li>📍 Based in India</li>
+            <li>🎓 Computer Science enthusiast</li>
+            <li>💡 Open-source contributor</li>
+            <li>✍️ Tech blogger</li>
+          </ul>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-number" data-target="10">0</span>
+            <span class="stat-label">Projects Built</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="5">0</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="2">0</span>
+            <span class="stat-label">Years Coding</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="100">0</span>
+            <span class="stat-label">GitHub Commits</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        themeToggleBtn.addEventListener('click', () => {
-            // Toggle the 'dark-mode' class on the body tag
-            body.classList.toggle('dark-mode');
+  <!-- ===== SKILLS ===== -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
 
-            // Change the button text based on the mode
-            if (body.classList.contains('dark-mode')) {
-                themeToggleBtn.textContent = '☀️ Light Mode';
-            } else {
-                themeToggleBtn.textContent = '🌙 Dark Mode';
-            }
-        });
-    </script>
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <div class="skill-item">
+            <span>HTML5</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>CSS3</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>JavaScript</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+        </div>
 
+        <div class="skill-category">
+          <h3>Tools &amp; Platforms</h3>
+          <div class="skill-item">
+            <span>Git &amp; GitHub</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>VS Code</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>Responsive Design</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Learning</h3>
+          <div class="skill-item">
+            <span>React</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>Node.js</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="50"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>Python</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="55"></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-icon">🌐</div>
+          <h3>Personal Portfolio</h3>
+          <p>This very site! A responsive personal portfolio built with pure HTML, CSS, and JavaScript — hosted on GitHub Pages.</p>
+          <div class="project-tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Sunil-gowda916/Sunil-gowda916.github.io" target="_blank" rel="noopener noreferrer" class="btn btn-sm">GitHub →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon">📝</div>
+          <h3>Tech Blog</h3>
+          <p>A blog documenting my learning journey in web development, covering HTML, CSS, JavaScript, and beyond.</p>
+          <div class="project-tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span>
+          </div>
+          <div class="project-links">
+            <a href="#blog" class="btn btn-sm">Read Posts →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon">🚀</div>
+          <h3>Coming Soon</h3>
+          <p>Something exciting is in the works. Stay tuned for my next project — more details coming soon!</p>
+          <div class="project-tags">
+            <span class="tag">TBD</span>
+          </div>
+          <div class="project-links">
+            <a href="#contact" class="btn btn-sm">Get Notified →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOG ===== -->
+  <section class="section section-alt" id="blog">
+    <div class="container">
+      <h2 class="section-title">Blog</h2>
+      <div class="blog-grid">
+
+        <article class="post-card">
+          <div class="post-meta">
+            <span class="post-date">April 9, 2026</span>
+            <span class="post-tag">JavaScript</span>
+          </div>
+          <h3>Adding Interactivity with JavaScript</h3>
+          <p>When you click the Dark Mode button, JavaScript tells the browser to swap out the colors seamlessly. This is the first step to making a truly dynamic web app!</p>
+          <a href="#" class="read-more">Read more →</a>
+        </article>
+
+        <article class="post-card">
+          <div class="post-meta">
+            <span class="post-date">April 8, 2026</span>
+            <span class="post-tag">Beginnings</span>
+          </div>
+          <h3>My First Dynamic UI Post</h3>
+          <p>Welcome to the upgraded version of my blog! Cards that lift on hover, dark mode, and clean CSS variables — my journey has begun!</p>
+          <a href="#" class="read-more">Read more →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-intro">
+        Have a question, project idea, or just want to say hi? Drop me a message!
+      </p>
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message 🚀</button>
+        <p class="form-status" id="form-status"></p>
+      </form>
+
+      <div class="social-links">
+        <a href="https://github.com/Sunil-gowda916" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="mailto:sunil@example.com" class="social-link" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>&copy; 2026 Sunil Gowda. Built with ❤️ using HTML, CSS &amp; JS.</p>
+    <a href="#hero" class="back-to-top" aria-label="Back to top">↑ Top</a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
